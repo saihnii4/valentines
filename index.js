@@ -6,7 +6,7 @@ const preload = (id) =>
   new Promise((res, req) => {
     if (loaded[id]) return req();
     const im = new Image();
-    im.src = `/stop_motion/${id}.webp`;
+    im.src = `/valentines/stop_motion/${id}.webp`;
     im.onload = res;
     im.onerror = req;
   });
