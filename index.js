@@ -21,13 +21,17 @@ window.onload = () => {
         console.log();
         console.log(`loaded ${id}`);
         loaded[id] = true;
+        document.body.classList.remove("locked");
       })
-      .catch(() => {});
+      .catch(() => {
+        document.body.classList.remove("locked");
+      });
   });
 
   window.onscroll = (ev) => {
-    const id =
-      Math.floor(IMG_COUNT*(docE.scrollTop / (docE.scrollHeight - docE.clientHeight)));
+    const id = Math.floor(
+      IMG_COUNT * (docE.scrollTop / (docE.scrollHeight - docE.clientHeight))
+    );
 
     if (id < 0) return; // possible if overscrolling
 
