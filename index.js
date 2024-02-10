@@ -15,18 +15,13 @@ window.onload = () => {
   const target = document.querySelector("#focal");
 
   const docE = document.documentElement;
-  [...Array(72).keys()].map((id) => {
-    preload(id)
-      .then(() => {
-        console.log();
-        console.log(`loaded ${id}`);
-        loaded[id] = true;
-        document.body.classList.remove("locked");
-      })
-      .catch(() => {
-        document.body.classList.remove("locked");
-      });
-  });
+  Promise.all([...Array(72).keys()].map(preload))
+    .then(() => {
+      document.body.classList.remove("locked");
+    })
+    .catch(() => {
+      document.body.classList.remove("locked");
+    });
 
   window.onscroll = (ev) => {
     const id = Math.floor(
