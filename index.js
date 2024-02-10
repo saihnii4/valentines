@@ -31,6 +31,6 @@ window.onload = () => {
 
     if (id < 0) return; // possible if overscrolling
 
-    target.src = `/stop_motion/${id}.webp`;
+    target.src = `/valentines/stop_motion/${id}.webp`;
   };
 };
