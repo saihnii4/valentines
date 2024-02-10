@@ -3,6 +3,8 @@
 body {
   position: absolute;
   height: 3200px;
+  width: 100%;
+  margin: 0;
   background-color: #e3bac6;
   overscroll-behavior: none;
   font-family: Honk;
